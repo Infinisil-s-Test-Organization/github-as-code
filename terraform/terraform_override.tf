@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    region               = "us-east-1"
-    bucket               = "github-mgmt"
+    region               = "eu-west-3"
+    bucket               = "github-as-code-test"
     key                  = "terraform.tfstate"
     workspace_key_prefix = "org"
-    dynamodb_table       = "github-mgmt"
+    dynamodb_table       = "github-as-code-test"
   }
 }

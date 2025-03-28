@@ -10,10 +10,9 @@ teams:
     privacy: closed
   noteam2:
     members:
-      maintainer:
-        - infinisil
       member:
         - infinixbot
+        - infinisil
     privacy: closed
   Test team:
     members:

@@ -41,6 +41,7 @@ resource "github_branch_protection" "this" {
       required_linear_history,
       # required_pull_request_reviews,
       # required_status_checks
+      lock_branch,
     ]
   }
 }

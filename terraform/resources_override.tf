@@ -49,9 +49,9 @@ resource "github_branch_protection" "this" {
 resource "github_team" "this" {
   lifecycle {
     ignore_changes = [
-      description,
-      parent_team_id,
-      privacy,
+      # description,
+      # parent_team_id,
+      # privacy,
     ]
   }
 }

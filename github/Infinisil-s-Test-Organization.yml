@@ -24,6 +24,10 @@ repositories:
   github-as-code:
     advanced_security: false
     allow_update_branch: false
+    branch_protection:
+      master:
+        blocks_creations: false
+        lock_branch: false
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE

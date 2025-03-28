@@ -1,5 +1,15 @@
 # yaml-language-server: $schema=.schema.json
 
+repositories:
+  notest:
+    teams:
+      pull:
+        - noteam
+        - noteam2
+  some-test:
+    teams:
+      push:
+        - test
 teams:
   noteam:
     {}

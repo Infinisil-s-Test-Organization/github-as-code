@@ -2,12 +2,12 @@
 
 teams:
   noteam:
-    privacy: closed
+    {}
   noteam2:
-    privacy: closed
+    {}
   Test team:
-    privacy: closed
+    {}
   test:
-    privacy: closed
+    {}
   test2:
-    privacy: closed
+    {}

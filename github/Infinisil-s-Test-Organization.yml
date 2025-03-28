@@ -1,23 +1,27 @@
 # yaml-language-server: $schema=.schema.json
 
-repositories:
-  notest:
-    teams:
-      pull:
-        - noteam
-        - noteam2
-  some-test:
-    teams:
-      push:
-        - test
 teams:
   noteam:
-    {}
+    members:
+      maintainer:
+        - infinisil
+      member:
+        - infinixbot
   noteam2:
-    {}
+    members:
+      maintainer:
+        - infinisil
+      member:
+        - infinixbot
   Test team:
-    {}
+    members:
+      maintainer:
+        - infinixbot
   test:
-    {}
+    members:
+      maintainer:
+        - infinisil
   test2:
-    {}
+    members:
+      maintainer:
+        - infinixbot

@@ -11,8 +11,8 @@ teams:
   noteam2:
     members:
       member:
-        - infinixbot
         - infinisil
+        - infinixbot
     privacy: closed
   Test team:
     members:

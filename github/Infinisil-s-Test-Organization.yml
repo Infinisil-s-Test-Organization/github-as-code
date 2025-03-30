@@ -3,124 +3,316 @@
 repositories:
   codeowners-samples:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: master
+    delete_branch_on_merge: false
+    description: CODEOWNERS samples used for
+      https://github.com/mszostok/codeowners-validator showcases
     has_discussions: false
+    has_downloads: true
+    has_issues: false
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: false
   codeowners-samples2:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: master
+    delete_branch_on_merge: false
+    description: CODEOWNERS samples used for
+      https://github.com/mszostok/codeowners-validator showcases
     has_discussions: false
+    has_downloads: true
+    has_issues: false
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: false
   github-as-code:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: master
+    delete_branch_on_merge: false
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    template:
+      owner: ipdxco
+      repository: github-as-code
+    visibility: public
+    vulnerability_alerts: true
   nixfmt:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: master
+    delete_branch_on_merge: false
+    description: The official formatter for Nix code
     has_discussions: false
+    has_downloads: true
+    has_issues: false
+    has_projects: true
+    has_wiki: false
+    homepage_url: https://nixfmt.serokell.io
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: false
   nixpkgs:
     advanced_security: false
+    allow_auto_merge: true
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: true
+    archived: false
+    auto_init: false
+    default_branch: master
+    delete_branch_on_merge: true
+    description: Nix Packages collection & NixOS
     has_discussions: false
+    has_downloads: true
+    has_issues: false
+    has_projects: true
+    has_wiki: false
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: false
   notest:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: main
+    delete_branch_on_merge: false
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: true
   some-test:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: main
+    delete_branch_on_merge: false
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: true
   subtree-source:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: main
+    delete_branch_on_merge: false
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: true
   subtree-target:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: main
+    delete_branch_on_merge: false
+    description: Subtree mirror test
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: true
   test:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: main
+    delete_branch_on_merge: false
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: true
   testing-archival:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: main
+    delete_branch_on_merge: false
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: true
   treefmt-test:
     advanced_security: false
+    allow_auto_merge: false
+    allow_merge_commit: true
+    allow_rebase_merge: true
+    allow_squash_merge: true
     allow_update_branch: false
+    archived: false
+    auto_init: false
+    default_branch: main
+    delete_branch_on_merge: false
+    description: Test for the treefmt GitHub Action
     has_discussions: false
+    has_downloads: true
+    has_issues: true
+    has_projects: true
+    has_wiki: true
+    is_template: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+    vulnerability_alerts: true
 teams:
   noteam:
     members:

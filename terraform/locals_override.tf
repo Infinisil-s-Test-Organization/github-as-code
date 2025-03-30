@@ -2,7 +2,7 @@ locals {
   resource_types = [
     # From https://github.com/ipdxco/github-as-code/blob/master/docs/ABOUT.md#supported-resources
     # "github_membership",
-    # "github_repository",
+    "github_repository",
     # "github_repository_collaborator",
     # "github_branch_protection",
     "github_team",

@@ -39,16 +39,7 @@ export class State {
 
   private _ignoredProperties: Record<string, string[]> = {}
   private _ignoredTypes: string[] = []
-  private _ignoredNames: Record<string, string[]> = {
-    // TODO: Populate from config
-    Team: ['noteam2'],
-    // TODO: Can't do that in practice..
-    TeamMember: [
-      'noteam2:infinisil',
-      'noteam2:infinisil-github-test',
-      'noteam2:infinixbot'
-    ]
-  }
+  private _ignoredTeams: string[] = []
   private _state?: StateSchema
 
   private updateIgnoredPropertiesFrom(path: string) {
@@ -82,6 +73,16 @@ export class State {
     }
   }
 
+  private updateIgnoredTeamsFrom(path: string) {
+    if (fs.existsSync(path)) {
+      const hcl = HCL.parseToObject(fs.readFileSync(path))?.at(0)
+      const teams = hcl?.locals?.at(0)?.ignored_teams
+      if (teams !== undefined) {
+        this._ignoredTeams = teams;
+      }
+    }
+  }
+
   private setState(source: string) {
     const state = JSON.parse(source, (_k, v) => v ?? undefined)
     if (state.values?.root_module?.resources !== undefined) {
@@ -108,6 +109,8 @@ export class State {
     )
     this.updateIgnoredTypesFrom(`${env.TF_WORKING_DIR}/locals.tf`)
     this.updateIgnoredTypesFrom(`${env.TF_WORKING_DIR}/locals_override.tf`)
+    this.updateIgnoredTeamsFrom(`${env.TF_WORKING_DIR}/locals.tf`)
+    this.updateIgnoredTeamsFrom(`${env.TF_WORKING_DIR}/locals_override.tf`)
     this.setState(source)
   }
 
@@ -178,7 +181,13 @@ export class State {
     resourceClass: ResourceConstructor<T>,
     name: string
   ): boolean {
-    return this._ignoredNames[resourceClass.name]?.includes(name)
+    if (resourceClass.name == "Team") {
+      return this._ignoredTeams.includes(name);
+    } else if (resourceClass.name == "TeamMember") {
+      return this._ignoredTeams.some((t) => name.startsWith(`${t}:`))
+    }
+
+    return false;
   }
 
   async addResource(id: Id, resource: Resource) {

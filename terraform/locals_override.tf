@@ -11,4 +11,7 @@ locals {
     # "github_repository_file",
     # "github_issue_label",
   ]
+  ignored_teams = [
+    "noteam2",
+  ]
 }

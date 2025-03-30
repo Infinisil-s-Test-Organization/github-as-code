@@ -1,6 +1,7 @@
 locals {
   organization      = terraform.workspace
   resource_types    = []
+  ignored_teams     = []
   advanced_security = false
   config            = yamldecode(file("${path.module}/../github/${local.organization}.yml"))
   state             = jsondecode(file("${path.module}/${local.organization}.tfstate.json"))

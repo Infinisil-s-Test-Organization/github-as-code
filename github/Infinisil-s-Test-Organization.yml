@@ -263,7 +263,7 @@ repositories:
     visibility: public
     vulnerability_alerts: true
   testing-archival:
-    archived: true
+    archived: false
   treefmt-test:
     advanced_security: false
     allow_auto_merge: false

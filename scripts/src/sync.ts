@@ -10,15 +10,17 @@ export async function sync(state: State, config: Config): Promise<void> {
       const oldResources = config.getResources(resourceClass)
       const newResources = await resourceClass.FromGitHub(oldResources)
       for (const [a, b] of newResources) {
-        if (!state.isNameIgnored(resourceClass, b.getName())) {
-          resources.push([a, b])
+        if (state.isNameIgnored(resourceClass, b.getName())) {
+          console.log(
+            'Ignoring resource of class ' +
+              resourceClass.name +
+              ' with name ' +
+              b.getName()
+          )
+          continue;
         }
-        console.log(
-          'Ignoring resource of class ' +
-            resourceClass.name +
-            ' with name ' +
-            b.getName()
-        )
+
+        resources.push([a, b])
       }
     }
   }

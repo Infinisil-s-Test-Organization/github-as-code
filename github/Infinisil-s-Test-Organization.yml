@@ -269,7 +269,7 @@ repositories:
     allow_rebase_merge: true
     allow_squash_merge: true
     allow_update_branch: false
-    archived: false
+    archived: true
     auto_init: false
     default_branch: main
     delete_branch_on_merge: false

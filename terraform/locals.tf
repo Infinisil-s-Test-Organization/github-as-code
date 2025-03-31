@@ -132,7 +132,7 @@ locals {
                 name       = name
               })
             ]
-          ]) : lower("${item.repository}:${item.label}") => item
+          ]) : lower("${item.repository}:${item.name}") => item
         }
       }
     }

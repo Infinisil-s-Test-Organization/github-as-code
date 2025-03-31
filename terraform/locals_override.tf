@@ -9,6 +9,6 @@ locals {
     # "github_team_repository",
     "github_team_membership",
     # "github_repository_file",
-    # "github_issue_label",
+    "github_issue_label",
   ]
 }

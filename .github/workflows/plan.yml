@@ -79,20 +79,20 @@ jobs:
         run: |
           git fetch origin "pull/${NUMBER}/head"
           rm -rf github && git checkout "${SHA}" -- github
-      - name: Setup terraform
-        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
+      - name: Setup tofu
+        uses: opentofu/setup-opentofu@592200bd4b9bbf4772ace78f887668b1aee8f716 # v1.0.5
         with:
-          terraform_version: 1.2.9
-          terraform_wrapper: false
-      - name: Initialize terraform
-        run: terraform init
+          tofu_version: 1.9.0
+          tofu_wrapper: false
+      - name: Initialize tofu
+        run: tofu init
         working-directory: terraform
-      - name: Plan terraform
+      - name: Plan tofu
         run: |
-          terraform show -json > $TF_WORKSPACE.tfstate.json
-          terraform plan -refresh=false -lock=false -out="${TF_WORKSPACE}.tfplan" -no-color
+          tofu show -json > $TF_WORKSPACE.tfstate.json
+          tofu plan -refresh=false -lock=false -out="${TF_WORKSPACE}.tfplan" -no-color
         working-directory: terraform
-      - name: Upload terraform plan
+      - name: Upload tofu plan
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.TF_WORKSPACE }}_${{ github.event.pull_request.head.sha || github.sha }}.tfplan
@@ -121,25 +121,25 @@ jobs:
         run: |
           git fetch origin "pull/${NUMBER}/head"
           rm -rf github && git checkout "${SHA}" -- github
-      - name: Setup terraform
-        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
+      - name: Setup tofu
+        uses: opentofu/setup-opentofu@592200bd4b9bbf4772ace78f887668b1aee8f716 # v1.0.5
         with:
-          terraform_version: 1.2.9
-          terraform_wrapper: false
-      - name: Initialize terraform
-        run: terraform init
+          tofu_version: 1.9.0
+          tofu_wrapper: false
+      - name: Initialize tofu
+        run: tofu init
         working-directory: terraform
-      - name: Download terraform plans
+      - name: Download tofu plans
         uses: actions/download-artifact@v4
         with:
           path: terraform
-      - name: Show terraform plans
+      - name: Show tofu plans
         run: |
           for plan in $(find . -type f -name '*.tfplan'); do
             echo "<details><summary>$(basename "${plan}" '.tfplan')</summary>" >> TERRAFORM_PLANS.md
             echo '' >> TERRAFORM_PLANS.md
             echo '```' >> TERRAFORM_PLANS.md
-            echo "$(terraform show -no-color "${plan}" 2>&1)" >> TERRAFORM_PLANS.md
+            echo "$(tofu show -no-color "${plan}" 2>&1)" >> TERRAFORM_PLANS.md
             echo '```' >> TERRAFORM_PLANS.md
             echo '' >> TERRAFORM_PLANS.md
             echo '</details>' >> TERRAFORM_PLANS.md
@@ -150,7 +150,7 @@ jobs:
         run: |
           echo 'COMMENT<<EOF' >> $GITHUB_ENV
           if [[ $(wc -c TERRAFORM_PLANS.md | cut -d' ' -f1) -ge 65000 ]]; then
-            echo "Terraform plans are too long to post as a comment. Please inspect [Plan > Comment > Show terraform plans](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) instead." >> $GITHUB_ENV
+            echo "Tofu plans are too long to post as a comment. Please inspect [Plan > Comment > Show tofu plans](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) instead." >> $GITHUB_ENV
           else
             cat TERRAFORM_PLANS.md >> $GITHUB_ENV
           fi
@@ -164,5 +164,5 @@ jobs:
           message: |
             Before merge, verify that all the following plans are correct. They will be applied as-is after the merge.
 
-            #### Terraform plans
+            #### Tofu plans
             ${{ env.COMMENT }}

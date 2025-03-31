@@ -15,7 +15,7 @@ export async function loadState() {
   let source = ''
   if (env.TF_EXEC === 'true') {
     core.info('Loading state from Terraform state file')
-    await cli.exec('terraform show -json', undefined, {
+    await cli.exec('tofu show -json', undefined, {
       cwd: env.TF_WORKING_DIR,
       listeners: {
         stdout: data => {
@@ -108,7 +108,7 @@ export class State {
   async refresh() {
     if (env.TF_EXEC === 'true') {
       await cli.exec(
-        `terraform apply -refresh-only -auto-approve -lock=${env.TF_LOCK}`,
+        `tofu apply -refresh-only -auto-approve -lock=${env.TF_LOCK}`,
         undefined,
         {
           cwd: env.TF_WORKING_DIR
@@ -171,7 +171,7 @@ export class State {
   async addResourceAt(id: Id, address: string) {
     if (env.TF_EXEC === 'true') {
       await cli.exec(
-        `terraform import -lock=${env.TF_LOCK} "${address.replaceAll(
+        `tofu import -lock=${env.TF_LOCK} "${address.replaceAll(
           '"',
           '\\"'
         )}" "${id}"`,
@@ -188,7 +188,7 @@ export class State {
   async removeResourceAt(address: string) {
     if (env.TF_EXEC === 'true') {
       await cli.exec(
-        `terraform state rm -lock=${env.TF_LOCK} "${address.replaceAll(
+        `tofu state rm -lock=${env.TF_LOCK} "${address.replaceAll(
           '"',
           '\\"'
         )}"`,

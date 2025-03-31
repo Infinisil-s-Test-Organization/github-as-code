@@ -66,19 +66,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup terraform
-        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
+      - name: Setup tofu
+        uses: opentofu/setup-opentofu@592200bd4b9bbf4772ace78f887668b1aee8f716 # v1.0.5
         with:
-          terraform_version: 1.2.9
-          terraform_wrapper: false
-      - name: Initialize terraform
-        run: terraform init
-      - name: Terraform Plan Download
+          tofu_version: 1.9.0
+          tofu_wrapper: false
+      - name: Initialize tofu
+        run: tofu init
+      - name: Tofu Plan Download
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SHA: ${{ needs.prepare.outputs.sha }}
         run: gh run download -n "${TF_WORKSPACE}_${SHA}.tfplan" --repo "${GITHUB_REPOSITORY}"
-      - name: Terraform Apply
+      - name: Tofu Apply
         run: |
-          terraform show -json > $TF_WORKSPACE.tfstate.json
-          terraform apply -lock-timeout=0s -no-color "${TF_WORKSPACE}.tfplan"
+          tofu show -json > $TF_WORKSPACE.tfstate.json
+          tofu apply -lock-timeout=0s -no-color "${TF_WORKSPACE}.tfplan"

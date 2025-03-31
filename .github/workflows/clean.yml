@@ -15,7 +15,7 @@ on:
         required: false
         default: "true"
       lock:
-        description: Whether to acquire terraform state lock during clean
+        description: Whether to acquire tofu state lock during clean
         required: false
         default: "true"
 
@@ -70,17 +70,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup terraform
-        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
+      - name: Setup tofu
+        uses: opentofu/setup-opentofu@592200bd4b9bbf4772ace78f887668b1aee8f716 # v1.0.5
         with:
-          terraform_version: 1.2.9
-          terraform_wrapper: false
-      - name: Initialize terraform
-        run: terraform init -upgrade
+          tofu_version: 1.9.0
+          tofu_wrapper: false
+      - name: Initialize tofu
+        run: tofu init -upgrade
         working-directory: terraform
-      - name: Select terraform workspace
+      - name: Select tofu workspace
         run: |
-          terraform workspace select "${TF_WORKSPACE_OPT}" || terraform workspace new "${TF_WORKSPACE_OPT}"
+          tofu workspace select "${TF_WORKSPACE_OPT}" || tofu workspace new "${TF_WORKSPACE_OPT}"
           echo "TF_WORKSPACE=${TF_WORKSPACE_OPT}" >> $GITHUB_ENV
         working-directory: terraform
       - name: Clean
@@ -92,5 +92,5 @@ jobs:
           if [[ "${DRY_RUN}" == 'true' ]]; then
             dryRunFlag='-dry-run'
           fi
-          terraform state list | grep -E "${REGEX}" | sed 's/"/\\"/g' | xargs -I {} terraform state rm -lock="${TF_LOCK}" ${dryRunFlag} {}
+          tofu state list | grep -E "${REGEX}" | sed 's/"/\\"/g' | xargs -I {} tofu state rm -lock="${TF_LOCK}" ${dryRunFlag} {}
         working-directory: terraform

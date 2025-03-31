@@ -235,12 +235,12 @@ repositories:
       question:
         color: d876e3
         description: Further information is requested
-      wontfix:
-        color: ffffff
-        description: This will not be worked on
       test:
         color: e4e4e4
         description: aaa
+      wontfix:
+        color: ffffff
+        description: This will not be worked on
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
     secret_scanning_push_protection: false

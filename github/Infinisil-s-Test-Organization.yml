@@ -21,7 +21,7 @@ repositories:
     has_wiki: true
     is_template: false
     labels:
-      bug:
+      bugs-arent-real:
         color: d73a4a
         description: Something isn't working
       documentation:

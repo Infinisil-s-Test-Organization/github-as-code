@@ -690,8 +690,6 @@ teams:
     members:
       maintainer:
         - infinisil
-      member:
-        - infinixbot
     privacy: closed
   noteam2:
     members:

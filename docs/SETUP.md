@@ -87,7 +87,15 @@
     - [ ] one with read & write policy attached
 - [ ] Modify [terraform/terraform_override.tf](terraform/terraform_override.tf) to reflect your AWS setup
 
-## GitHub App
+## GitHub API access
+
+There are two supported ways for GitHub API access:
+- With GitHub Apps, which has the benefit of not being tied to a GitHub user
+- With a personal access token for a GitHub user, which has the benefit of more granular permissions
+
+https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps#machine-vs-bot-accounts
+
+### GitHub App
 
 *NOTE*: If you already have a GitHub App with required permissions you can skip the app creation step.
 
@@ -114,7 +122,7 @@
     </details>
 - [ ] [Install the GitHub Apps](https://docs.github.com/en/developers/apps/managing-github-apps/installing-github-apps) in the GitHub organization for `All repositories`
 
-## GitHub Repository Secrets
+#### GitHub Repository Secrets
 
 - [ ] [Create encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-organization) for the GitHub organization and allow the repository to access them (\*replace `$GITHUB_ORGANIZATION_NAME` with the GitHub organization name) - *these secrets are read by the GitHub Action workflows*
     - [ ] Go to `https://github.com/organizations/$GITHUB_ORGANIZATION_NAME/settings/apps/$GITHUB_APP_NAME` and copy the `App ID`
@@ -131,6 +139,10 @@
        - [ ] `RW_AWS_ACCESS_KEY_ID`
        - [ ] `RO_AWS_SECRET_ACCESS_KEY`
        - [ ] `RW_AWS_SECRET_ACCESS_KEY`
+
+### Personal access token
+
+#### GitHub Repository Secrets
 
 ## GitHub Management Repository Setup
 

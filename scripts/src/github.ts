@@ -23,15 +23,19 @@ export class GitHub {
   static github: GitHub
   static async getGitHub(): Promise<GitHub> {
     if (GitHub.github === undefined) {
-      const auth = createAppAuth({
-        appId: env.GITHUB_APP_ID,
-        privateKey: env.GITHUB_APP_PEM_FILE
-      })
-      const installationAuth = await auth({
-        type: 'installation',
-        installationId: env.GITHUB_APP_INSTALLATION_ID
-      })
-      GitHub.github = new GitHub(installationAuth.token)
+      let token = env.GITHUB_TOKEN;
+      if (token == '') {
+        const auth = createAppAuth({
+          appId: env.GITHUB_APP_ID,
+          privateKey: env.GITHUB_APP_PEM_FILE
+        })
+        const installationAuth = await auth({
+          type: 'installation',
+          installationId: env.GITHUB_APP_INSTALLATION_ID
+        })
+        token = installationAuth.token;
+      }
+      GitHub.github = new GitHub(token)
     }
     return GitHub.github
   }

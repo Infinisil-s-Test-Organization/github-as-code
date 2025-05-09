@@ -26,3 +26,9 @@ teams:
       maintainer:
         - infinisil
         - infinixbot
+  new-team:
+    members:
+      maintainer:
+        - infinixbot
+      member:
+        - infinisil

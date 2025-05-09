@@ -93,6 +93,8 @@ There are two supported ways for GitHub API access:
 - With GitHub Apps, which has the benefit of not being tied to a GitHub user
 - With a personal access token for a GitHub user, which has the benefit of more granular permissions
 
+https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps#machine-vs-bot-accounts
+
 ### GitHub App
 
 *NOTE*: If you already have a GitHub App with required permissions you can skip the app creation step.

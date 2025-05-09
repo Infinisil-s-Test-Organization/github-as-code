@@ -9,6 +9,12 @@ teams:
         - Lassulus
         - Ra33it0
         - ryantrinkle
+  new-team:
+    members:
+      maintainer:
+        - infinixbot
+      member:
+        - infinisil
   noteam:
     members:
       maintainer:
@@ -26,9 +32,3 @@ teams:
       maintainer:
         - infinisil
         - infinixbot
-  new-team:
-    members:
-      maintainer:
-        - infinixbot
-      member:
-        - infinisil

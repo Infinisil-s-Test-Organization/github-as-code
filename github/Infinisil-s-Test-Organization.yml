@@ -10,11 +10,11 @@ teams:
         - Ra33it0
         - ryantrinkle
   new-team:
+    create_default_maintainer: false
     members:
       maintainer:
-        - infinixbot
-      member:
         - infinisil
+        - infinixbot
   noteam:
     members:
       maintainer:
@@ -32,7 +32,3 @@ teams:
       maintainer:
         - infinisil
         - infinixbot
-  test2:
-    members:
-      maintainer:
-        - infinisil

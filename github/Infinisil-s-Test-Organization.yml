@@ -1,2 +1,25 @@
 # yaml-language-server: $schema=.schema.json
-{}
+teams:
+  new-team:
+    create_default_maintainer: false
+    members:
+      maintainer:
+        - infinisil
+        - infinixbot
+  noteam:
+    members:
+      maintainer:
+        - infinisil-github-test
+        - infinisil
+        - infinixbot
+  noteam2:
+    members:
+      maintainer:
+        - infinisil-github-test
+        - infinisil
+        - infinixbot
+  test:
+    members:
+      maintainer:
+        - infinisil
+        - infinixbot

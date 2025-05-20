@@ -3,4 +3,8 @@ locals {
     "github_team",
     "github_team_membership",
   ]
+
+  ignore = {
+    "teams" = [ "associates" ]
+  }
 }

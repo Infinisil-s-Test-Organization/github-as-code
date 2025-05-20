@@ -1,4 +1,5 @@
 resource "github_repository" "this" {
+  ignore_vulnerability_alerts_during_read = true
   lifecycle {
     ignore_changes = [
       allow_auto_merge,

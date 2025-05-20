@@ -9,6 +9,8 @@ teams:
       maintainer:
         - infinisil
         - infinixbot
+      member:
+        - infinisil-github-test
   noteam2:
     members:
       maintainer:

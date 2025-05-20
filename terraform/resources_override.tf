@@ -1,5 +1,4 @@
 resource "github_repository" "this" {
-  ignore_vulnerability_alerts_during_read = true
   lifecycle {
     ignore_changes = [
       allow_auto_merge,
@@ -18,7 +17,7 @@ resource "github_repository" "this" {
       has_projects,
       has_wiki,
       homepage_url,
-      # ignore_vulnerability_alerts_during_read,
+      ignore_vulnerability_alerts_during_read,
       is_template,
       license_template,
       pages,
@@ -51,7 +50,7 @@ resource "github_team" "this" {
     ignore_changes = [
       # description,
       parent_team_id,
-      # privacy,
+      privacy,
     ]
   }
 }

@@ -6,20 +6,26 @@ teams:
       maintainer:
         - infinisil
         - infinixbot
+    privacy: secret
   noteam:
     members:
       maintainer:
-        - infinisil-github-test
         - infinisil
         - infinixbot
+      member:
+        - infinisil-github-test
+    privacy: closed
   noteam2:
     members:
       maintainer:
-        - infinisil-github-test
         - infinisil
         - infinixbot
+      member:
+        - infinisil-github-test
+    privacy: closed
   test:
     members:
       maintainer:
         - infinisil
         - infinixbot
+    privacy: closed

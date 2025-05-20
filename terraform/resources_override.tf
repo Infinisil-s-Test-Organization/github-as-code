@@ -25,7 +25,7 @@ resource "github_repository" "this" {
       template,
       topics,
       visibility,
-      #vulnerability_alerts, Needs admin permission
+      vulnerability_alerts
     ]
   }
 }

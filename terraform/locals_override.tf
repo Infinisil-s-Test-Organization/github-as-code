@@ -8,5 +8,6 @@ locals {
 
   ignore = {
     "teams" = [ "associates" ]
+    "repositories" = [ "testing-archival" ]
   }
 }

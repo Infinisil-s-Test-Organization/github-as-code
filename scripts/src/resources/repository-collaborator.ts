@@ -17,22 +17,22 @@ export class RepositoryCollaborator extends String implements Resource {
     _collaborators: RepositoryCollaborator[]
   ): Promise<[Id, RepositoryCollaborator][]> {
     const github = await GitHub.getGitHub()
-    const invitations = await github.listRepositoryInvitations()
-    const collaborators = await github.listRepositoryCollaborators()
     const result: [Id, RepositoryCollaborator][] = []
-    for (const invitation of invitations) {
-      if (invitation.invitee === null) {
-        throw new Error(`Invitation ${invitation.id} has no invitee`)
-      }
-      result.push([
-        `${invitation.repository.name}:${invitation.invitee.login}`,
-        new RepositoryCollaborator(
-          invitation.repository.name,
-          invitation.invitee.login,
-          invitation.permissions as Permission
-        )
-      ])
-    }
+    // const invitations = await github.listRepositoryInvitations()
+    // for (const invitation of invitations) {
+    //   if (invitation.invitee === null) {
+    //     throw new Error(`Invitation ${invitation.id} has no invitee`)
+    //   }
+    //   result.push([
+    //     `${invitation.repository.name}:${invitation.invitee.login}`,
+    //     new RepositoryCollaborator(
+    //       invitation.repository.name,
+    //       invitation.invitee.login,
+    //       invitation.permissions as Permission
+    //     )
+    //   ])
+    // }
+    const collaborators = await github.listRepositoryCollaborators()
     for (const collaborator of collaborators) {
       let permission: Permission | undefined
       if (collaborator.collaborator.permissions?.admin) {

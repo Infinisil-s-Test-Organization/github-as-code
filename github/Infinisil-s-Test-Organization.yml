@@ -1,1 +1,25 @@
-{}
+teams:
+  new-team:
+    members:
+      maintainer:
+        - infinisil
+        - infinixbot
+  noteam:
+    members:
+      maintainer:
+        - infinisil
+        - infinixbot
+      member:
+        - infinisil-github-test
+  noteam2:
+    members:
+      maintainer:
+        - infinisil
+        - infinixbot
+      member:
+        - infinisil-github-test
+  test:
+    members:
+      maintainer:
+        - infinisil
+        - infinixbot

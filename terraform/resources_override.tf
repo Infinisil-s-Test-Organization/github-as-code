@@ -18,7 +18,7 @@ resource "github_repository" "this" {
       has_projects,
       has_wiki,
       homepage_url,
-      ignore_vulnerability_alerts_during_read,
+      # ignore_vulnerability_alerts_during_read,
       is_template,
       license_template,
       pages,
